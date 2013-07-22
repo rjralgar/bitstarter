@@ -7,7 +7,7 @@ app.get('/', function(request, response) {
   var raw = fs.readFileSync('index.html');
   var buffer = new Buffer(16);
   buffer.write(raw, "utf-8");
-  response.send(buffer);
+  response.send(buffer.toString('utf-8'))
 });
 
 var port = process.env.PORT || 5000;
